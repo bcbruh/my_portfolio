@@ -30,9 +30,9 @@ function renderSharedNavbar() {
 
   header.innerHTML = `
     <nav class="nav" aria-label="Điều hướng chính">
-      <a class="brand" href="index.html" aria-label="Digital Portfolio">
-        <span class="brand-mark" aria-hidden="true">DP</span>
-        <span>Digital Portfolio</span>
+      <a class="brand" href="index.html" aria-label="Phạm Xuân Bắc">
+        <span class="brand-mark" aria-hidden="true">PXB</span>
+        <span>Phạm Xuân Bắc</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span class="sr-only">Mở menu</span>

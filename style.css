@@ -30,7 +30,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Be Vietnam Pro", Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   line-height: 1.65;
   overflow-x: hidden;
 }
@@ -101,14 +101,14 @@ h3 {
 }
 
 .brand-mark {
-  width: 38px;
+  width: 48px;
   height: 38px;
   display: inline-grid;
   place-items: center;
   border-radius: var(--radius);
   background: var(--green);
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   box-shadow: 0 12px 28px rgba(20, 92, 68, 0.24);
 }
 
@@ -1244,6 +1244,41 @@ body {
   color: var(--tech-text);
 }
 
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  color: #f7fbff;
+  text-shadow: 0 0 5px rgba(138, 220, 255, 0.1);
+}
+
+h1,
+h2,
+h3,
+.brand,
+.nav-link,
+.button,
+.eyebrow,
+.project-field strong,
+.card-kicker,
+.summary-icon {
+  text-shadow:
+    0 0 8px rgba(180, 232, 255, 0.2),
+    0 0 18px rgba(67, 191, 255, 0.09);
+}
+
+p,
+.footer-inner span,
+.skill-description p {
+  color: rgba(237, 246, 255, 0.88);
+  text-shadow: 0 0 6px rgba(102, 209, 255, 0.09);
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -1507,7 +1542,7 @@ body::before {
 }
 
 .nav-link {
-  color: rgba(226, 238, 252, 0.78);
+  color: rgba(240, 248, 255, 0.9);
 }
 
 .nav-link:hover,
@@ -1592,7 +1627,7 @@ body::before {
 }
 
 .hero-text {
-  color: var(--tech-muted);
+  color: rgba(237, 246, 255, 0.88);
 }
 
 .hero-visual {
@@ -1702,7 +1737,7 @@ body::before {
 .section-heading p,
 .summary-hero p,
 .skill-description p {
-  color: var(--tech-muted);
+  color: rgba(237, 246, 255, 0.86);
 }
 
 .skills-strip {
@@ -1898,7 +1933,7 @@ body::before {
 
 .project-copy p,
 .summary-card p {
-  color: var(--tech-muted);
+  color: rgba(235, 245, 255, 0.84);
 }
 
 .project-field strong {
