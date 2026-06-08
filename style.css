@@ -2013,6 +2013,18 @@ body::before {
 
 }
 
+@media (hover: none), (pointer: coarse), (max-width: 900px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  body::before,
+  .pointer-glow,
+  .cosmic-effects {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .profile-grid,

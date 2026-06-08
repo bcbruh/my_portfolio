@@ -61,40 +61,46 @@ function renderSharedNavbar() {
 
 renderSharedNavbar();
 
-const pointerGlow = document.createElement("div");
-pointerGlow.className = "pointer-glow";
-pointerGlow.setAttribute("aria-hidden", "true");
-document.body.appendChild(pointerGlow);
+const canUseAmbientEffects = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-const cosmicEffects = document.createElement("div");
-cosmicEffects.className = "cosmic-effects";
-cosmicEffects.setAttribute("aria-hidden", "true");
-cosmicEffects.innerHTML = `
-  <span class="aurora aurora-one"></span>
-  <span class="aurora aurora-two"></span>
-  ${Array.from({ length: 34 }, (_, index) => `<span class="cosmic-star cosmic-star-${index + 1}"></span>`).join("")}
-  <span class="meteor meteor-one"></span>
-  <span class="meteor meteor-two"></span>
-  <span class="meteor meteor-three"></span>
-  <span class="meteor meteor-four"></span>
-`;
-document.body.appendChild(cosmicEffects);
+if (canUseAmbientEffects) {
+  const pointerGlow = document.createElement("div");
+  pointerGlow.className = "pointer-glow";
+  pointerGlow.setAttribute("aria-hidden", "true");
+  document.body.appendChild(pointerGlow);
 
-let pointerGlowFrame;
-window.addEventListener("pointermove", (event) => {
-  if (event.pointerType === "touch") return;
+  const cosmicEffects = document.createElement("div");
+  cosmicEffects.className = "cosmic-effects";
+  cosmicEffects.setAttribute("aria-hidden", "true");
+  cosmicEffects.innerHTML = `
+    <span class="aurora aurora-one"></span>
+    <span class="aurora aurora-two"></span>
+    ${Array.from({ length: 34 }, (_, index) => `<span class="cosmic-star cosmic-star-${index + 1}"></span>`).join("")}
+    <span class="meteor meteor-one"></span>
+    <span class="meteor meteor-two"></span>
+    <span class="meteor meteor-three"></span>
+    <span class="meteor meteor-four"></span>
+  `;
+  document.body.appendChild(cosmicEffects);
 
-  window.cancelAnimationFrame(pointerGlowFrame);
-  pointerGlowFrame = window.requestAnimationFrame(() => {
-    document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
-    document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
-    pointerGlow.classList.add("is-visible");
+  let pointerGlowFrame;
+  window.addEventListener(
+    "pointermove",
+    (event) => {
+      window.cancelAnimationFrame(pointerGlowFrame);
+      pointerGlowFrame = window.requestAnimationFrame(() => {
+        document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
+        document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
+        pointerGlow.classList.add("is-visible");
+      });
+    },
+    { passive: true }
+  );
+
+  document.documentElement.addEventListener("mouseleave", () => {
+    pointerGlow.classList.remove("is-visible");
   });
-});
-
-document.documentElement.addEventListener("mouseleave", () => {
-  pointerGlow.classList.remove("is-visible");
-});
+}
 
 const projects = [
   {
