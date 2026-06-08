@@ -108,7 +108,7 @@ const projects = [
       "Qua bài này, tôi nhận ra rằng việc quản lý tệp tin hợp lý là một kỹ năng nền tảng nhưng rất quan trọng. Khi dữ liệu được sắp xếp rõ ràng, quá trình học tập và làm việc trở nên hiệu quả hơn nhiều.",
     link: "https://docs.google.com/document/d/1DnKBTsO3k2SGVRjyqhiG_v8IR7k3POb0/edit?usp=drive_link&ouid=103327445161011042221&rtpof=true&sd=true",
     preview: "https://docs.google.com/document/d/1DnKBTsO3k2SGVRjyqhiG_v8IR7k3POb0/preview",
-    image: "assets/images/project-1.png",
+    image: "assets/images/project-1.webp",
     imageAlt: "Minh họa quản lý tệp và thư mục",
   },
   {
@@ -122,7 +122,7 @@ const projects = [
       "Bài này giúp tôi hiểu rằng tìm được thông tin chưa đủ, quan trọng hơn là biết chọn lọc, kiểm chứng và đánh giá nguồn. Đây là kỹ năng cần thiết để học tập và nghiên cứu nghiêm túc hơn.",
     link: "https://drive.google.com/file/d/1754ZyrJrJHAEa4rdthxl6I0O-BqUxxCe/view?usp=drive_link",
     preview: "https://drive.google.com/file/d/1754ZyrJrJHAEa4rdthxl6I0O-BqUxxCe/preview",
-    image: "assets/images/project-2.png",
+    image: "assets/images/project-2.webp",
     imageAlt: "Minh họa tìm kiếm thông tin học thuật",
   },
   {
@@ -136,7 +136,7 @@ const projects = [
       "Qua bài này, tôi nhận thấy chất lượng phản hồi của AI phụ thuộc rất nhiều vào cách đặt yêu cầu. Prompt càng rõ ràng thì kết quả nhận được càng có cấu trúc, sát mục tiêu và dễ sử dụng hơn.",
     link: "https://drive.google.com/file/d/1TOW2tBJO_U5QwIdbypUSsxMlQOOWnCpw/view?usp=drive_link",
     preview: "https://drive.google.com/file/d/1TOW2tBJO_U5QwIdbypUSsxMlQOOWnCpw/preview",
-    image: "assets/images/project-3.png",
+    image: "assets/images/project-3.webp",
     imageAlt: "Minh họa viết prompt hiệu quả",
   },
   {
@@ -150,7 +150,7 @@ const projects = [
       "Bài này cho tôi thấy rằng làm việc nhóm trực tuyến không chỉ là trao đổi qua tin nhắn. Một nhóm làm việc hiệu quả cần có công cụ phù hợp, phân công rõ ràng và cách theo dõi tiến độ hợp lý.",
     link: "https://drive.google.com/file/d/1OiCRxmOUsgvSgOjfpzwMwLreHnCq1b5p/view?usp=drive_link",
     preview: "https://drive.google.com/file/d/1OiCRxmOUsgvSgOjfpzwMwLreHnCq1b5p/preview",
-    image: "assets/images/project-4.png",
+    image: "assets/images/project-4.webp",
     imageAlt: "Minh họa hợp tác trực tuyến",
   },
   {
@@ -164,7 +164,7 @@ const projects = [
       "Bài này giúp tôi thấy rõ AI là công cụ hỗ trợ mạnh trong sáng tạo nội dung, đặc biệt ở giai đoạn lên ý tưởng và tạo bản nháp. Tuy nhiên, sản phẩm cuối cùng vẫn cần sự đánh giá và chỉnh sửa của con người.",
     link: "https://drive.google.com/drive/folders/1AAPphkXzxgSCixd1C3YL9YOSKviHi_mM?usp=drive_link",
     preview: "https://drive.google.com/embeddedfolderview?id=1AAPphkXzxgSCixd1C3YL9YOSKviHi_mM#grid",
-    image: "assets/images/project-5.png",
+    image: "assets/images/project-5.webp",
     imageAlt: "Minh họa sáng tạo nội dung với AI",
   },
   {
@@ -178,7 +178,7 @@ const projects = [
       "Qua bài này, tôi hiểu rằng sử dụng AI hiệu quả không chỉ nằm ở kỹ thuật đặt câu hỏi, mà còn nằm ở ý thức, trách nhiệm và sự trung thực của người học.",
     link: "https://drive.google.com/file/d/1nSrX30CQ3sXjHRzThILooDURNG98UYU7/view?usp=drive_link",
     preview: "https://drive.google.com/file/d/1nSrX30CQ3sXjHRzThILooDURNG98UYU7/preview",
-    image: "assets/images/project-6.png",
+    image: "assets/images/project-6.webp",
     imageAlt: "Minh họa sử dụng AI có trách nhiệm",
   },
 ];
@@ -190,7 +190,7 @@ const summaryItems = [
     icon: "book",
     body:
       "Qua quá trình thực hiện Portfolio, tôi đã hệ thống lại các kiến thức liên quan đến quản lý tệp tin, tìm kiếm và đánh giá thông tin, viết prompt hiệu quả, sử dụng công cụ hợp tác trực tuyến, ứng dụng AI trong sáng tạo nội dung và nguyên tắc sử dụng AI có trách nhiệm.",
-    image: "assets/images/summary-1.png",
+    image: "assets/images/summary-1.webp",
     imageAlt: "Minh họa kiến thức đã học",
   },
   {
@@ -199,7 +199,7 @@ const summaryItems = [
     icon: "alert",
     body:
       "Khó khăn lớn nhất là chọn lọc và sắp xếp lại các bài đã làm sao cho ngắn gọn nhưng vẫn đầy đủ. Bên cạnh đó, tôi cũng cần đảm bảo bố cục rõ ràng, giao diện dễ nhìn và cách trình bày thống nhất giữa các phần trong Portfolio.",
-    image: "assets/images/summary-2.png",
+    image: "assets/images/summary-2.webp",
     imageAlt: "Minh họa khó khăn trong quá trình thực hiện",
   },
   {
@@ -208,7 +208,7 @@ const summaryItems = [
     icon: "spark",
     body:
       "Tôi cải thiện được kỹ năng tổ chức thông tin, trình bày nội dung, sử dụng công cụ số, làm việc có hệ thống hơn và biết cách khai thác AI phục vụ học tập một cách hiệu quả hơn trước.",
-    image: "assets/images/summary-3.png",
+    image: "assets/images/summary-3.webp",
     imageAlt: "Minh họa kỹ năng cải thiện",
   },
   {
@@ -217,7 +217,7 @@ const summaryItems = [
     icon: "check",
     body:
       "Tôi nhận ra rằng một sản phẩm học tập tốt không chỉ cần có nội dung đúng mà còn cần được trình bày logic, mạch lạc và phù hợp với mục tiêu sử dụng. Ngoài ra, AI chỉ thực sự phát huy hiệu quả khi người dùng biết đặt yêu cầu rõ ràng và có tư duy chọn lọc.",
-    image: "assets/images/summary-4.png",
+    image: "assets/images/summary-4.webp",
     imageAlt: "Minh họa bài học rút ra",
   },
   {
@@ -226,7 +226,7 @@ const summaryItems = [
     icon: "arrow",
     body:
       "Trong thời gian tới, tôi muốn tiếp tục hoàn thiện Portfolio này như một nơi lưu trữ các sản phẩm học tập và dự án cá nhân, đồng thời rèn luyện thêm kỹ năng sử dụng công cụ số, trình bày nội dung và ứng dụng AI trong học tập.",
-    image: "assets/images/summary-5.png",
+    image: "assets/images/summary-5.webp",
     imageAlt: "Minh họa hướng phát triển",
   },
 ];
@@ -259,7 +259,7 @@ function createProject(project, index) {
   article.className = `project-card reveal ${index % 2 === 1 ? "is-reverse" : ""}`;
   article.innerHTML = `
     <div class="project-media">
-      <img src="${project.image}" alt="${project.imageAlt}" loading="lazy" />
+      <img src="${project.image}" alt="${project.imageAlt}" loading="lazy" decoding="async" />
     </div>
     <div class="project-copy">
       <h3>${project.title}</h3>
@@ -311,7 +311,7 @@ function createSummaryCard(item, index) {
       <p>${item.body}</p>
     </div>
     <div class="summary-media">
-      <img src="${item.image}" alt="${item.imageAlt}" loading="lazy" />
+      <img src="${item.image}" alt="${item.imageAlt}" loading="lazy" decoding="async" />
     </div>
   `;
   return article;
