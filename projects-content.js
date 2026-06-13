@@ -133,7 +133,7 @@ window.projectContent = [
   =================================================================== */
   {
     title: "Sử dụng AI để đánh giá dữ liệu",
-    source: { label: "Báo cáo PDF", file: "assets/reports/su-dung-ai-danh-gia-du-lieu.pdf" },
+    source: { label: "Báo cáo PDF", file: "https://drive.google.com/file/d/1754ZyrJrJHAEa4rdthxl6I0O-BqUxxCe/view?usp=drive_link" },
     blocks: [
       { t: "h2", text: "1. Chủ đề nghiên cứu" },
       { t: "p", text: "Chủ đề nghiên cứu của báo cáo là Sử dụng AI để đánh giá dữ liệu. Đây là một chủ đề có tính thực tiễn cao trong bối cảnh trí tuệ nhân tạo ngày càng được sử dụng rộng rãi trong học tập, nghiên cứu và phân tích thông tin." },
@@ -237,7 +237,7 @@ window.projectContent = [
   =================================================================== */
   {
     title: "Viết Prompt hiệu quả cho các tác vụ học tập",
-    source: { label: "Báo cáo PDF", file: "assets/reports/prompt-engineering.pdf" },
+    source: { label: "Báo cáo PDF", file: "https://drive.google.com/file/d/1TOW2tBJO_U5QwIdbypUSsxMlQOOWnCpw/view?usp=drive_link" },
     blocks: [
       { t: "h2", text: "1. Giới thiệu chủ đề" },
       { t: "p", text: "Báo cáo này nghiên cứu và ứng dụng Prompt Engineering trong quá trình học tập với chủ đề: Tìm hiểu về các thư viện điều khiển thời gian thực. Tài liệu nghiên cứu chính được sử dụng là cuốn Real-Time C++ của Christopher Kormanyos." },
@@ -367,7 +367,7 @@ window.projectContent = [
   =================================================================== */
   {
     title: "Tổ chức và quản lý cuộc họp trực tuyến",
-    source: { label: "Báo cáo PDF", file: "assets/reports/to-chuc-cuoc-hop-truc-tuyen.pdf" },
+    source: { label: "Báo cáo PDF", file: "https://drive.google.com/file/d/1KRSuemdxx_E8oFHL6c7F0H2Mx0uZNe_D/view?usp=sharing" },
     blocks: [
       { t: "h2", text: "1. Giới thiệu chủ đề" },
       { t: "p", text: "Báo cáo này trình bày quá trình tổ chức và quản lý một cuộc họp trực tuyến của nhóm nhằm lập kế hoạch thực hiện đồ án “Xây dựng Website giới thiệu sản phẩm công nghệ” trên Trello." },
@@ -576,7 +576,7 @@ window.projectContent = [
   =================================================================== */
   {
     title: "Sử dụng AI có trách nhiệm",
-    source: { label: "Báo cáo PDF", file: "assets/reports/su-dung-ai-co-trach-nhiem.pdf" },
+    source: { label: "Báo cáo PDF", file: "https://drive.google.com/file/d/1nSrX30CQ3sXjHRzThILooDURNG98UYU7/view?usp=drive_link" },
     blocks: [
       { t: "h2", text: "I. Nghiên cứu chính sách sử dụng AI của trường" },
       { t: "p", text: "Nguồn tham khảo: Chính sách sử dụng AI của Trường Đại học Công nghệ — ĐHQGHN (UET), kết hợp tham khảo hướng dẫn của UNESCO (2023) về AI trong giáo dục đại học." },
