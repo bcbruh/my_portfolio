@@ -1,116 +1,57 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Các dự án học tập trong Digital Portfolio của Phạm Xuân Bắc."
-    />
-    <title>Dự án học tập - Digital Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header" data-active-page="projects"></header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dự án học tập | Phạm Xuân Bắc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page projects-page">
+    <div class="corner-map" aria-hidden="true"></div>
+    <header class="site-header">
+      <nav>
+        <a href="index.html">Trang chủ</a>
+        <a class="active" href="projects.html">Dự án học tập</a>
+        <a href="reflection.html">Tổng kết</a>
+      </nav>
+      <div class="tape-label">Digital Portfolio</div>
+    </header>
 
-    <main id="top">
-      <section class="projects page-section" aria-labelledby="projects-title">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Sản phẩm đã thực hiện</p>
-            <h1 id="projects-title">Dự án học tập</h1>
-            <p>
-              Môn học "Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo" cung cấp những kiến thức
-              và kỹ năng nền tảng về công nghệ số, tìm kiếm và đánh giá thông tin, sử dụng công cụ
-              trực tuyến, khai thác AI tạo sinh và ứng dụng AI có trách nhiệm trong học tập. Các nội
-              dung dưới đây là những sản phẩm tiêu biểu được thực hiện trong quá trình học tập môn
-              học này.
-            </p>
-          </div>
-          <div class="skills-strip reveal" aria-label="Tag kỹ năng">
-            <button
-              class="skill-tag"
-              type="button"
-              data-description="Tổ chức tệp tin, thư mục và quy tắc đặt tên dữ liệu khoa học."
-            >
-              Quản lý dữ liệu
-            </button>
-            <button
-              class="skill-tag"
-              type="button"
-              data-description="Sử dụng các kỹ thuật tìm kiếm nâng cao để thu thập thông tin học thuật."
-            >
-              Tìm kiếm thông tin
-            </button>
-            <button
-              class="skill-tag"
-              type="button"
-              data-description="Phân tích độ tin cậy và chất lượng của các nguồn thông tin thu thập được."
-            >
-              Đánh giá nguồn
-            </button>
-            <button
-              class="skill-tag"
-              type="button"
-              data-description="So sánh và cải thiện prompt nhằm tạo ra kết quả AI chính xác hơn."
-            >
-              Prompt Engineering
-            </button>
-            <button
-              class="skill-tag"
-              type="button"
-              data-description="Sử dụng công cụ trực tuyến để phối hợp và quản lý công việc nhóm."
-            >
-              Làm việc nhóm
-            </button>
-            <button
-              class="skill-tag"
-              type="button"
-              data-description="Ứng dụng AI trong quá trình sáng tạo nội dung số và hỗ trợ học tập."
-            >
-              AI tạo sinh
-            </button>
-            <button
-              class="skill-tag"
-              type="button"
-              data-description="Tìm hiểu nguyên tắc sử dụng AI có trách nhiệm trong học tập và nghiên cứu."
-            >
-              Đạo đức AI
-            </button>
-            <button
-              class="skill-tag"
-              type="button"
-              data-description="Tổng hợp các kỹ năng số được rèn luyện thông qua toàn bộ dự án."
-            >
-              Kỹ năng số
-            </button>
-          </div>
-          <div class="skill-description reveal" aria-live="polite">
-            <p id="skill-description-text">
-              Các chủ đề kỹ năng được phát triển trong quá trình thực hiện dự án.
-            </p>
-          </div>
-          <div class="project-list" id="project-list"></div>
+    <main>
+      <section class="projects-intro">
+        <div>
+          <h1>DỰ ÁN HỌC TẬP</h1>
+          <p class="script">Nơi lưu trữ và chia sẻ các dự án học tập,<br>nghiên cứu và ứng dụng thực tiễn.</p>
         </div>
+        <div class="intro-collage"><img src="assets/generated/projects-collage.png" alt=""></div>
+      </section>
+
+      <div class="workspace-shelf" aria-hidden="true"><span>❧ Hồ sơ các dự án đã thực hiện ❧</span></div>
+
+      <section class="project-workspace">
+        <aside class="project-list">
+          <h2>Danh sách dự án</h2>
+          <div class="flourish">— ❧ —</div>
+          <button class="project-tab active" data-project="0"><span></span><b>01</b> Quản lý tệp và thư mục</button>
+          <button class="project-tab" data-project="1"><span></span><b>02</b> Sử dụng AI để đánh giá dữ liệu</button>
+          <button class="project-tab" data-project="2"><span></span><b>03</b> Viết Prompt hiệu quả</button>
+          <button class="project-tab" data-project="3"><span></span><b>04</b> Hợp tác trực tuyến</button>
+          <button class="project-tab" data-project="4"><span></span><b>05</b> Tận dụng AI trong môi trường số</button>
+          <button class="project-tab" data-project="5"><span></span><b>06</b> Sử dụng AI có trách nhiệm</button>
+        </aside>
+        <article class="document-viewer" id="documentViewer"></article>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <strong>Digital Portfolio - Phạm Xuân Bắc</strong>
-          <span>Môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo</span>
-        </div>
-        <a href="#top">Quay lại đầu trang</a>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="projects-content.js"></script>
+  <script src="script.js"></script>
+  <script src="ambient.js"></script>
+  <script src="depth.js"></script>
+  <script src="nav-router.js"></script>
+  <script src="sound-player.js"></script>
+</body>
 </html>
