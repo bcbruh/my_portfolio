@@ -4,6 +4,7 @@
 const projects = window.projectContent || [];
 let viewer = null;
 let progress = null;
+let currentProjectIndex = null;
 let projectPageInitializedPath = null;
 
 function ensureProjectElements() {
@@ -132,9 +133,11 @@ function sourceLinkText(source) {
 }
 
 function renderProject(index) {
+  if (index === currentProjectIndex) return;
   const project = projects[index];
   if (!project) return;
 
+  currentProjectIndex = index;
   const body = project.blocks.map(renderBlock).join("");
   const source = project.source;
   const link = source
@@ -179,16 +182,18 @@ function initProjectsPage() {
   const initialProject = getInitialProject();
 
   document.querySelectorAll(".project-tab").forEach(tab => {
-    tab.classList.toggle("active", Number(tab.dataset.project) === initialProject);
+    const projectIndex = Number(tab.dataset.project);
+    tab.classList.toggle("active", projectIndex === initialProject);
     tab.setAttribute("aria-selected", tab.classList.contains("active") ? "true" : "false");
-    tab.addEventListener("click", () => {
+    tab.onclick = () => {
+      if (projectIndex === currentProjectIndex) return;
       const activeTab = document.querySelector(".project-tab.active");
       if (activeTab) activeTab.classList.remove("active");
       document.querySelectorAll(".project-tab").forEach(item => item.setAttribute("aria-selected", "false"));
       tab.classList.add("active");
       tab.setAttribute("aria-selected", "true");
-      renderProject(Number(tab.dataset.project));
-    });
+      renderProject(projectIndex);
+    };
   });
 
   let progressTicking = false;
