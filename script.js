@@ -173,7 +173,7 @@ function getInitialProject() {
 function initProjectsPage() {
   if (!ensureProjectElements()) return;
   const currentPath = location.pathname.replace(/\/$/, "");
-  if (projectPageInitializedPath === currentPath) return;
+  if (projectPageInitializedPath === currentPath && viewer && viewer.isConnected) return;
   projectPageInitializedPath = currentPath;
 
   const initialProject = getInitialProject();
