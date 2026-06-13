@@ -5,7 +5,6 @@ const projects = window.projectContent || [];
 let viewer = null;
 let progress = null;
 let currentProjectIndex = null;
-let projectPageInitializedPath = null;
 
 function ensureProjectElements() {
   if (viewer && viewer.isConnected) return true;
@@ -175,9 +174,12 @@ function getInitialProject() {
 
 function initProjectsPage() {
   if (!ensureProjectElements()) return;
-  const currentPath = location.pathname.replace(/\/$/, "");
-  if (projectPageInitializedPath === currentPath && viewer && viewer.isConnected) return;
-  projectPageInitializedPath = currentPath;
+  // Each SPA navigation swaps in a fresh #documentViewer. Skip only if THIS
+  // element was already wired up — this avoids duplicate listeners on the same
+  // DOM while still re-rendering after we navigate away and come back.
+  if (viewer.dataset.projectsInit === "1") return;
+  viewer.dataset.projectsInit = "1";
+  currentProjectIndex = null;
 
   const initialProject = getInitialProject();
 
