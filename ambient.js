@@ -29,8 +29,10 @@
     el.style.setProperty("--drift-quarter", `${drift * 0.25}vw`);
     el.style.setProperty("--drift-back", `${drift * -0.12}vw`);
     el.style.setProperty("--drift-late", `${drift * 0.7}vw`);
-    el.style.setProperty("--duration", `${13 + (index % 5) * 2.4}s`);
-    el.style.setProperty("--delay", `${-index * 1.6}s`);
+    el.style.setProperty("--duration", `${22 + (index % 5) * 3}s`);
+    // Positive delay: every element starts above the viewport and falls down.
+    // Modulo distributes start times evenly across a ~21 s window.
+    el.style.setProperty("--delay", `${((index * 1.7) % 21).toFixed(1)}s`);
     el.style.setProperty("--scale", `${0.6 + (index % 5) * 0.18}`);
     el.style.setProperty("--spin", `${200 + index * 41}deg`);
     el.style.setProperty("--sway", `${(index % 3) * 0.5 + 1}`);
@@ -44,7 +46,7 @@
   // speeds and delays — otherwise they fall in lockstep with a petal and look
   // glued to it.
   for (let index = 0; index < leafCount; index += 1) {
-    layer.append(makeFaller(100 + index * 5, "falling-leaf"));
+    layer.append(makeFaller(100 + index * 7, "falling-leaf"));
   }
 
   document.body.append(layer);
