@@ -5,51 +5,42 @@
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isMobile = window.matchMedia("(max-width: 640px)").matches;
-  const petalCount = prefersReduced ? 0 : (isMobile ? 4 : 9);
+  const petalCount = prefersReduced ? 0 : (isMobile ? 3 : 5);
 
-  // Keep things along the two side margins; only an occasional one drifts through the center.
-  const sidePosition = index => {
-    const left = 3 + (index % 4) * 4.5;        // 3vw – 16.5vw band on the left
-    const right = 84 + (index % 4) * 4;        // 84vw – 96vw band on the right
-    return index % 2 ? right : left;
-  };
+  // X positions alternate L/R so first 4 (mobile) and all 9 (desktop) are spread.
+  // Sorted they are 2,14,26,38,50,62,74,86,98 — every gap = 12 vw (> 1/9 screen).
+  const petalXs     = [2, 62, 14, 74, 26, 86, 38, 98, 50];
+  // Delays spread petals ~2 s apart. Same-duration index pairs (0&5, 1&6, 2&7, 3&8)
+  // are offset by ≥32 % of their cycle → always ≥37 vh apart vertically.
+  const petalDelays = [0, 2.25, 4, 6, 7.5, 10.5, 12.25, 14, 16];
 
-  // Builds one falling element (petal or leaf) with a full set of drift vars so
-  // both share the same `petal-fall` keyframes.
-  const makeFaller = (index, className) => {
+  for (let i = 0; i < petalCount; i += 1) {
     const el = document.createElement("i");
-    el.className = className;
-    // Every 4th one is allowed to cross nearer the middle, the rest hug the sides.
-    const x = index % 4 === 3 ? 38 + (index % 3) * 8 : sidePosition(index);
-    el.style.setProperty("--x", `${x}vw`);
-    const drift = index % 2 ? 13 + (index % 6) * 2.1 : -11 - (index % 6) * 1.8;
-    el.style.setProperty("--drift", `${drift}vw`);
-    el.style.setProperty("--drift-quarter", `${drift * 0.25}vw`);
-    el.style.setProperty("--drift-back", `${drift * -0.12}vw`);
-    el.style.setProperty("--drift-late", `${drift * 0.7}vw`);
-    el.style.setProperty("--duration", `${22 + (index % 5) * 3}s`);
-    // Positive delay: every element starts above the viewport and falls down.
-    // Modulo distributes start times evenly across a ~21 s window.
-    // Non-linear delays so petals sharing the same x-column stay ≥7 s apart.
-    // Column x=3vw → indices 0,4,8 → delays 0,7,14; x=12vw → 2,6 → 3,10; x=88vw → 1,5 → 5,11.
-    const petalDelays = [0, 5, 3, 9, 7, 11, 10, 2, 14];
-    el.style.setProperty("--delay", `${petalDelays[index] ?? 0}s`);
-    el.style.setProperty("--scale", `${0.6 + (index % 5) * 0.18}`);
-    el.style.setProperty("--spin", `${200 + index * 41}deg`);
-    el.style.setProperty("--sway", `${(index % 3) * 0.5 + 1}`);
-    return el;
-  };
-
-  for (let index = 0; index < petalCount; index += 1) {
-    layer.append(makeFaller(index, "falling-petal"));
+    el.className = "falling-petal";
+    const x = petalXs[i];
+    const sign = x < 50 ? 1 : -1;
+    const driftMag = 9 + (i % 5) * 2.5;
+    const drift = sign * driftMag;
+    const duration = 22 + (i % 5) * 3;
+    el.style.setProperty("--x",             `${x}vw`);
+    el.style.setProperty("--drift",          `${drift}vw`);
+    el.style.setProperty("--drift-quarter",  `${(drift * 0.25).toFixed(1)}vw`);
+    el.style.setProperty("--drift-back",     `${(drift * -0.12).toFixed(1)}vw`);
+    el.style.setProperty("--drift-late",     `${(drift * 0.7).toFixed(1)}vw`);
+    el.style.setProperty("--duration",       `${duration}s`);
+    el.style.setProperty("--delay",          `${petalDelays[i]}s`);
+    el.style.setProperty("--scale",          `${0.6 + (i % 5) * 0.18}`);
+    el.style.setProperty("--spin",           `${200 + i * 41}deg`);
+    el.style.setProperty("--sway",           `${(i % 3) * 0.5 + 1}`);
+    layer.append(el);
   }
 
-  // Two leaves: winding diagonal paths from the mid-upper screen, 5 s apart.
-  // Left leaf drifts L→R→L; right leaf mirrors it.
+  // Two leaves: diagonal tilt, gentle winding path, 5 s apart.
+  // --leaf-tilt makes left leaf lean right (+32°) and right leaf lean left (-32°).
   if (!prefersReduced) {
     [
-      { x: 25, driftA: -8, driftB:  12, driftC: -3, delay: 4  },
-      { x: 70, driftA:  8, driftB: -12, driftC:  3, delay: 9  },
+      { x: 25, driftA: -5, driftB:  7, driftC: -2, delay: 4, tilt:  32 },
+      { x: 70, driftA:  5, driftB: -7, driftC:  2, delay: 9, tilt: -32 },
     ].forEach(cfg => {
       const el = document.createElement("i");
       el.className = "falling-leaf";
@@ -57,6 +48,7 @@
       el.style.setProperty("--leaf-drift-a",  `${cfg.driftA}vw`);
       el.style.setProperty("--leaf-drift-b",  `${cfg.driftB}vw`);
       el.style.setProperty("--leaf-drift-c",  `${cfg.driftC}vw`);
+      el.style.setProperty("--leaf-tilt",     `${cfg.tilt}deg`);
       el.style.setProperty("--scale",         "0.9");
       el.style.setProperty("--duration",      "30s");
       el.style.setProperty("--delay",         `${cfg.delay}s`);
