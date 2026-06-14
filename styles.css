@@ -139,7 +139,9 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; letter-spacing: 0;
 }
 .portrait-in-collage img { width: 120%; height: 120%; margin: -9% 0 0 -10%; object-fit: cover; object-position: center 32%; }
 /* Dried-flower petals drifting down past the avatar, settling at its base */
-.collage-petals { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden; }
+.collage-petals { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, black 68%, transparent 93%);
+  mask-image: linear-gradient(to bottom, black 68%, transparent 93%); }
 .collage-petal {
   position: absolute;
   top: 12%;
@@ -423,7 +425,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; letter-spacing: 0;
   clip-path: polygon(50% 0%, 78% 20%, 90% 52%, 70% 86%, 50% 100%, 30% 86%, 10% 52%, 22% 20%);
   filter: drop-shadow(0 1px 1.5px #5a4a1d55);
   transform-origin: 50% 16%;
-  animation: petal-fall var(--duration) linear var(--delay) infinite;
+  animation: leaf-fall var(--duration) ease-in-out var(--delay) infinite;
   will-change: transform, opacity;
 }
 .falling-leaf::after {
@@ -441,6 +443,16 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; letter-spacing: 0;
   76% { transform: translate3d(calc(var(--x) + var(--drift-late)), 80vh, 0) rotate(330deg) scale(var(--scale)); }
   93% { opacity: .7; }
   100% { opacity: 0; transform: translate3d(calc(var(--x) + var(--drift)), 108vh, 0) rotate(var(--spin)) scale(var(--scale)); }
+}
+/* Leaves use a separate keyframe: winding diagonal path, gentle rock (not full spin) */
+@keyframes leaf-fall {
+  0%   { opacity: 0; transform: translate3d(var(--x), 10vh, 0) rotate(0deg) scale(var(--scale)); }
+  10%  { opacity: .72; }
+  28%  { transform: translate3d(calc(var(--x) + var(--leaf-drift-a)), 27vh, 0) rotate(7deg) scale(var(--scale)); }
+  52%  { transform: translate3d(calc(var(--x) + var(--leaf-drift-b)), 50vh, 0) rotate(-4deg) scale(var(--scale)); }
+  74%  { transform: translate3d(calc(var(--x) + var(--leaf-drift-a)), 65vh, 0) rotate(9deg) scale(var(--scale)); }
+  90%  { opacity: .5; transform: translate3d(calc(var(--x) + var(--leaf-drift-c)), 73vh, 0) rotate(-2deg) scale(var(--scale)); }
+  100% { opacity: 0;  transform: translate3d(calc(var(--x) + var(--leaf-drift-c)), 78vh, 0) rotate(4deg) scale(var(--scale)); }
 }
 @keyframes globe-rock {
   0%, 100% { transform: rotate(-1.2deg) translateY(0); }

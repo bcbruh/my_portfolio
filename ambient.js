@@ -6,8 +6,6 @@
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isMobile = window.matchMedia("(max-width: 640px)").matches;
   const petalCount = prefersReduced ? 0 : (isMobile ? 4 : 9);
-  // A few withered leaves drift down alongside the petals.
-  const leafCount = prefersReduced ? 0 : (isMobile ? 2 : 4);
 
   // Keep things along the two side margins; only an occasional one drifts through the center.
   const sidePosition = index => {
@@ -42,11 +40,25 @@
   for (let index = 0; index < petalCount; index += 1) {
     layer.append(makeFaller(index, "falling-petal"));
   }
-  // Use a distinct index range for leaves so they get their own x positions,
-  // speeds and delays — otherwise they fall in lockstep with a petal and look
-  // glued to it.
-  for (let index = 0; index < leafCount; index += 1) {
-    layer.append(makeFaller(100 + index * 7, "falling-leaf"));
+
+  // Two leaves: winding diagonal paths from the mid-upper screen, 5 s apart.
+  // Left leaf drifts L→R→L; right leaf mirrors it.
+  if (!prefersReduced) {
+    [
+      { x: 25, driftA: -8, driftB:  12, driftC: -3, delay: 4  },
+      { x: 70, driftA:  8, driftB: -12, driftC:  3, delay: 9  },
+    ].forEach(cfg => {
+      const el = document.createElement("i");
+      el.className = "falling-leaf";
+      el.style.setProperty("--x",            `${cfg.x}vw`);
+      el.style.setProperty("--leaf-drift-a",  `${cfg.driftA}vw`);
+      el.style.setProperty("--leaf-drift-b",  `${cfg.driftB}vw`);
+      el.style.setProperty("--leaf-drift-c",  `${cfg.driftC}vw`);
+      el.style.setProperty("--scale",         "0.9");
+      el.style.setProperty("--duration",      "30s");
+      el.style.setProperty("--delay",         `${cfg.delay}s`);
+      layer.append(el);
+    });
   }
 
   document.body.append(layer);
