@@ -139,9 +139,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; letter-spacing: 0;
 }
 .portrait-in-collage img { width: 120%; height: 120%; margin: -9% 0 0 -10%; object-fit: cover; object-position: center 32%; }
 /* Dried-flower petals drifting down past the avatar, settling at its base */
-.collage-petals { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 72%);
-  mask-image: linear-gradient(to bottom, black 50%, transparent 72%); }
+.collage-petals { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden; }
 .collage-petal {
   position: absolute;
   top: 12%;
