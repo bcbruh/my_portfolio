@@ -30,7 +30,10 @@
     el.style.setProperty("--duration", `${22 + (index % 5) * 3}s`);
     // Positive delay: every element starts above the viewport and falls down.
     // Modulo distributes start times evenly across a ~21 s window.
-    el.style.setProperty("--delay", `${(index * 1.1).toFixed(1)}s`);
+    // Non-linear delays so petals sharing the same x-column stay ≥7 s apart.
+    // Column x=3vw → indices 0,4,8 → delays 0,7,14; x=12vw → 2,6 → 3,10; x=88vw → 1,5 → 5,11.
+    const petalDelays = [0, 5, 3, 9, 7, 11, 10, 2, 14];
+    el.style.setProperty("--delay", `${petalDelays[index] ?? 0}s`);
     el.style.setProperty("--scale", `${0.6 + (index % 5) * 0.18}`);
     el.style.setProperty("--spin", `${200 + index * 41}deg`);
     el.style.setProperty("--sway", `${(index % 3) * 0.5 + 1}`);
