@@ -21,7 +21,7 @@
     const sign = x < 50 ? 1 : -1;
     const driftMag = 9 + (i % 5) * 2.5;
     const drift = sign * driftMag;
-    const duration = 22 + (i % 5) * 3;
+    const duration = 13 + (i % 5) * 1.5;
     el.style.setProperty("--x",             `${x}vw`);
     el.style.setProperty("--drift",          `${drift}vw`);
     el.style.setProperty("--drift-quarter",  `${(drift * 0.25).toFixed(1)}vw`);
