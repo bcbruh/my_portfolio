@@ -30,7 +30,7 @@
     el.style.setProperty("--duration", `${22 + (index % 5) * 3}s`);
     // Positive delay: every element starts above the viewport and falls down.
     // Modulo distributes start times evenly across a ~21 s window.
-    el.style.setProperty("--delay", `${((index * 1.7) % 21).toFixed(1)}s`);
+    el.style.setProperty("--delay", `${(index * 1.1).toFixed(1)}s`);
     el.style.setProperty("--scale", `${0.6 + (index % 5) * 0.18}`);
     el.style.setProperty("--spin", `${200 + index * 41}deg`);
     el.style.setProperty("--sway", `${(index % 3) * 0.5 + 1}`);
